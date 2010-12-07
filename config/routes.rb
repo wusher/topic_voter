@@ -2,6 +2,7 @@ TopicVoter::Application.routes.draw do
   devise_for :users
 
   get "home/about"
+  get "home/secure"
 
 
   # The priority is based upon order of creation:

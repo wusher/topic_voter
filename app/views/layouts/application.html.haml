@@ -7,9 +7,17 @@
     = csrf_meta_tag
   %body
     .header{ :style => 'border:thin black solid;'}
-      %h1 vote for topics
+      %h1
+        %a{ :href=> "/", :class => "plain_link" } vote for topics
+      .right
+        - if user_signed_in?
+          = link_to current_user.email, destroy_user_session_path
+        - else
+          = link_to "Sign up", new_user_registration_path
     .container_12
-      .notice= notice
-      .alert= alert
+      - if notice
+        .notice= notice
+      - if alert
+        .alert= alert
       = yield
     .clear

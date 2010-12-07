@@ -2,3 +2,23 @@ break_html {
   background-color:#222222; color:#ffffff;
 
 }
+
+
+.left{
+  float:left;
+}
+
+.right {
+  float:right;
+}
+
+.plain_link {
+  text-decoration:none;
+}
+
+.notice {
+  margin:5px; padding:10px; border: solid thick green; color:green; font-weight:bold;
+}
+.alert ,#error_explanation{
+  margin:5px; padding:10px; border: solid thick red; color:red; font-weight:bold;
+}
