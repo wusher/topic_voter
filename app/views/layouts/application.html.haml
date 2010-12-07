@@ -1,4 +1,4 @@
-!!!
+!!! 5
 %html
   %head
     %title vote for topics
@@ -6,4 +6,8 @@
     = javascript_include_tag :defaults
     = csrf_meta_tag
   %body
-    = yield
+    .header{ :style => 'border:thin black solid;'}
+      %h1 vote for topics
+    .container_12
+      = yield
+    .clear
