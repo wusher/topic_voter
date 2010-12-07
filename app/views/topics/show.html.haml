@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Body:
+  = @topic.body
+%p
+  %b Presentor:
+  = @topic.presentor
+%p
+  %b Score:
+  = @topic.score
+
+= link_to 'Edit', edit_topic_path(@topic)
+\|
+= link_to 'Back', topics_path
