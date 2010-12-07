@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  body: MyText
+  presentor: MyString
+  score: 1
+
+two:
+  body: MyText
+  presentor: MyString
+  score: 1
