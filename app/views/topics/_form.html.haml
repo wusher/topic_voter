@@ -1,10 +1,11 @@
 = simple_form_for @topic do |f|
   -if @topic.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@topic.errors.count, "error")} prohibited this topic from being saved:"
-      %ul
-        - @topic.errors.full_messages.each do |msg|
-          %li= msg
+    .grid_10.prefix_1.suffix_1
+      #error_explanation
+        %h2= "#{pluralize(@topic.errors.count, "error")} prohibited this topic from being saved:"
+        %ul
+          - @topic.errors.full_messages.each do |msg|
+            %li= msg
   .grid_4.prefix_1.suffix_1
     = f.input :presentor, :input_html => { :class => 'fill ' }
   .grid_4.prefix_1.suffix_1

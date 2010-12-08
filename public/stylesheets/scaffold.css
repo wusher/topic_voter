@@ -8,18 +8,15 @@ body, p, ol, ul, td {
 
 
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+  color: red;
+  margin-bottom:10px;
 }
 
 #error_explanation {
-  width: 450px;
   border: 2px solid red;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
 }
 
 #error_explanation h2 {
@@ -30,7 +27,7 @@ body, p, ol, ul, td {
   margin: -7px;
   margin-bottom: 0px;
   background-color: #c00;
-  color: #fff;
+  color: #ccc;
 }
 
 #error_explanation ul li {

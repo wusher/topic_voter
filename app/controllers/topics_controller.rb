@@ -46,10 +46,12 @@ class TopicsController < ApplicationController
     @topic = Topic.new(params[:topic])
     @topic.submited_by = current_user.email
     @topic.body_html = textilize(@topic.body)
+    @topic.score = 0 unless @topic.score
+    @topic.presentor = '???' unless @topic.presentor
 
     respond_to do |format|
       if @topic.save
-        format.html { redirect_to(@topic, :notice => 'Topic was successfully created.') }
+        format.html { redirect_to('', :notice => 'Topic was successfully created.') }
         format.xml  { render :xml => @topic, :status => :created, :location => @topic }
       else
         format.html { render :action => "new" }
@@ -68,7 +70,7 @@ class TopicsController < ApplicationController
         @topic.body_html = textilize(@topic.body)
         @topic.score = 0 unless @topic.score
         @topic.save
-        format.html { redirect_to(@topic, :notice => 'Topic was successfully updated.') }
+        format.html { redirect_to('', :notice => 'Topic was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
