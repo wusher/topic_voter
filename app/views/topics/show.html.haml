@@ -4,12 +4,15 @@
   %b Body:
   = @topic.body
 %p
+  %b Body:
+  = raw @topic.body_html
+%p
   %b Presentor:
   = @topic.presentor
 %p
   %b Score:
   = @topic.score
 
-= link_to 'Edit', edit_topic_path(@topic)
+= link_to 'Edit', edit_topic_path(@topic), :class => 'jbutton'
 \|
-= link_to 'Back', topics_path
+= link_to 'Back', topics_path, :class => 'jbutton'

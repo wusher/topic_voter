@@ -1,24 +1,29 @@
-%h1 Listing topics
 
-%table
-  %tr
-    %th Body
-    %th Presentor
-    %th Score
-    %th
-    %th
-    %th
 
+.grid_12{ :style => 'margin:20px' }
+  - if user_signed_in?
+    = link_to 'New Topic', new_topic_path , :class => 'jbutton'
+
+.clear
+.grid_11
   - @topics.each do |topic|
-    %tr
-      %td= topic.body
-      %td= topic.presentor
-      %td= topic.score
-      %td= link_to 'Show', topic
-      %td= link_to 'Edit', edit_topic_path(topic)
-      %td= link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-- if user_signed_in?
-  = link_to 'New Topic', new_topic_path , :class => 'jbutton'
+    .grid_8.prefix_1.suffix_1
+      %h2.fg_text= topic.title
+    .grid_1
+      %a{:class => 'upvote voter center', :href => '#' }
+      .score.center.fg_text
+        = topic.score 
+      %a{:class => 'downvote voter center', :href => '#' }
+    .grid_8
+      .disp_text.topic_body
+        = raw topic.body_html
+      .fg_text
+        \ presented by 
+        = topic.presentor
+    - if user_signed_in?
+      .grid_1
+        = link_to 'Edit', edit_topic_path(topic), :class => 'fg_text'
+        - if current_user.email == topic.submited_by
+          = link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete, :class => 'fg_text'
+    .clear
+    .grid_10{ :style => 'margin:10px;'}

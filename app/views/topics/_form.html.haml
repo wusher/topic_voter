@@ -10,7 +10,9 @@
   .grid_4.prefix_1.suffix_1
     = f.input :target_on, :as => :string,   :input_html => {:class => 'jdate fill '}
   .grid_10.prefix_1.suffix_1
-    = f.input :body, :input_html => { :class => 'disp_text fill', :rows => 8}
+    = f.input :title, :input_html => { :class => 'fill ' }
+  .grid_10.prefix_1.suffix_1
+    = f.input :body, :input_html => { :class => 'disp_text ', :rows => 5, :style => 'padding:10px;width:760px;'}
     %br
   .grid_10.prefix_1.suffix_1
     #html_preview{ :class => 'topic_body disp_text'  } html preview    

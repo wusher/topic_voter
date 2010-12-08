@@ -1,3 +1,6 @@
+
+require 'RedCloth'
+
 class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.xml
@@ -42,6 +45,7 @@ class TopicsController < ApplicationController
   def create
     @topic = Topic.new(params[:topic])
     @topic.submited_by = current_user.email
+    @topic.body_html = textilize(@topic.body)
 
     respond_to do |format|
       if @topic.save
@@ -58,6 +62,8 @@ class TopicsController < ApplicationController
   # PUT /topics/1.xml
   def update
     @topic = Topic.find(params[:id])
+    @topic.body_html = textilize(@topic.body)
+    @topic.score = 0 unless @topic.score
 
     respond_to do |format|
       if @topic.update_attributes(params[:topic])
@@ -81,4 +87,19 @@ class TopicsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+
+  private 
+
+  def textilize(text, *options)
+    options ||= [:hard_breaks]
+    if text.blank?
+      ''
+    else 
+      textilized = RedCloth.new(text,options)
+      textilized.to_html
+    end
+  end
 end
+
+

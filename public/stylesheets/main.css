@@ -1,5 +1,5 @@
-break_html {
-  background-color:#222222; color:#ffffff;
+html, body {
+  background-color:#222222; color:#222222;
 
 }
 
@@ -22,6 +22,9 @@ break_html {
 .alert ,#error_explanation{
   margin:5px; padding:10px; border: solid thick red; color:red; font-weight:bold;
 }
+.center {
+  text-align:center;
+}
 
 .fill { 
   width:100%;
@@ -31,12 +34,38 @@ break_html {
 
 .topic_body {
   padding:20px;
+  min-height:60px;
 }
+
 
 .disp_text {
   background-color:#ccc;
   
   -moz-border-radius:7px;
-
   -moz-box-shadow:0px 3px 5px black inset;
+}
+
+.fg_text, .fg_text a, .fg_text a:visited{
+  font-weight:bold; color:#ccc;
+}
+
+.voter {
+  height:30px; width:30px;display:block;
+  margin:0px 10px;
+}
+.upvote {
+   background-color:green;
+  -moz-border-radius:15px;
+  -moz-box-shadow:0px 3px 5px black inset;
+}
+.downvote {
+   background-color:red;
+  -moz-border-radius:15px;
+  -moz-box-shadow:0px 3px 5px black inset;
+}
+
+.score {
+  font-weight:bold; font-size:20px;
+  margin: 0px 10px; display:block;width:30px;height:20px;
+  padding-top:7px; padding-bottom:7px;
 }
