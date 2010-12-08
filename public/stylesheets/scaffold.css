@@ -2,7 +2,6 @@
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size:   13px;
-  line-height: 18px;
 }
 
 
@@ -26,11 +25,20 @@ body, p, ol, ul, td {
   font-size: 12px;
   margin: -7px;
   margin-bottom: 0px;
-  background-color: #c00;
+  background-color: red;
   color: #ccc;
 }
 
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+
+.valign_parent {
+  position:relative;display:table;
+}
+.valign_content {
+  position:absolute; top:50%; height:10em; margin-top:-5em;display:table-cell;
+
 }

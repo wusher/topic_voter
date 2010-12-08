@@ -12,6 +12,9 @@ html, body{
 .right {
   float:right;
 }
+.aright{
+  text-align:right;
+}
 
 .plain_link {
   text-decoration:none;
@@ -34,7 +37,7 @@ html, body{
 
 
 .topic_body {
-  padding:20px;
+  padding:10px;
   min-height:60px;
 }
 
@@ -55,18 +58,28 @@ html, body{
   margin:0px 10px;
 }
 .upvote {
-   background-color:green;
+   background-color:darkgreen;
   -moz-border-radius:15px;
   -moz-box-shadow:0px 3px 5px black inset;
 }
+.upvote_voted{
+  background-color:green;
+  -moz-border-radius:15px;
+  -moz-box-shadow:0px 0px 7px 2px green ;
+}
 .downvote {
-   background-color:red;
+   background-color:darkred;
   -moz-border-radius:15px;
   -moz-box-shadow:0px 3px 5px black inset;
+}
+.downvote_voted {
+   background-color:red;
+  -moz-border-radius:15px;
+  -moz-box-shadow:0px 0px 7px 2px red;
 }
 
 .score {
   font-weight:bold; font-size:20px;
-  margin: 0px 10px; display:block;width:30px;height:20px;
-  padding-top:7px; padding-bottom:7px;
+  margin: 0px 10px; display:block;width:30px;height:30px;
+  padding-top:7px; 
 }

@@ -17,9 +17,14 @@
     .grid_8
       .disp_text.topic_body
         = raw topic.body_html
-      .fg_text
-        \ presented by 
-        = topic.presentor
+      .grid_7
+        .fg_text
+          .right
+            - if topic.target_on
+              \ around #{ topic.target_on }
+            - else 
+              \ anytime
+          \ presented by #{ (topic.presentor.length > 0 && topic.presentor) || '???' }
     - if user_signed_in?
       .grid_1
         = link_to 'Edit', edit_topic_path(topic), :class => 'fg_text'
