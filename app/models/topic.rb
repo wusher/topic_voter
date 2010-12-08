@@ -4,4 +4,5 @@ class Topic < ActiveRecord::Base
                     :length => { :minimum => 20 }
   validates :title, :presence => true,
                     :length => { :minimum => 5 } 
+  has_many :votes
 end
