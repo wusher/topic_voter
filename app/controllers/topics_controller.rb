@@ -62,11 +62,12 @@ class TopicsController < ApplicationController
   # PUT /topics/1.xml
   def update
     @topic = Topic.find(params[:id])
-    @topic.body_html = textilize(@topic.body)
-    @topic.score = 0 unless @topic.score
 
     respond_to do |format|
       if @topic.update_attributes(params[:topic])
+        @topic.body_html = textilize(@topic.body)
+        @topic.score = 0 unless @topic.score
+        @topic.save
         format.html { redirect_to(@topic, :notice => 'Topic was successfully updated.') }
         format.xml  { head :ok }
       else

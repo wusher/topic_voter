@@ -1,8 +1,9 @@
-html, body {
-  background-color:#222222; color:#222222;
-
+html, body{
+  background-color:#222222; color:#ccc;
 }
-
+ a:visited, a{
+  color:#ccc;
+}
 
 .left{
   float:left;
@@ -39,14 +40,14 @@ html, body {
 
 
 .disp_text {
-  background-color:#ccc;
+  background-color:#ccc; color:#222;
   
   -moz-border-radius:7px;
   -moz-box-shadow:0px 3px 5px black inset;
 }
 
 .fg_text, .fg_text a, .fg_text a:visited{
-  font-weight:bold; color:#ccc;
+  font-weight:bold; 
 }
 
 .voter {

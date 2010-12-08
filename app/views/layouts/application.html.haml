@@ -8,7 +8,7 @@
     = csrf_meta_tag
   %body
     .header{ :style => 'border:thin black solid;'}
-      %h1.fg_text
+      %h1
         %a{ :href=> "/", :class => "plain_link" } vote for topics
       .right
         - if user_signed_in?
