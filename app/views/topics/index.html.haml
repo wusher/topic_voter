@@ -10,10 +10,10 @@
     .grid_8.prefix_1.suffix_1
       %h2.fg_text= topic.title
     .grid_1
-      %a{:class => 'upvote voter center', :href => '#' }
+      %a{:class => 'voter center ' + (current_user.voted_for?(topic) ? "upvoted" : "upvote"), :href => '#' }
       .score.center.fg_text
         = topic.score 
-      %a{:class => 'downvote voter center', :href => '#' }
+      %a{:class => 'voter center '+ (current_user.voted_against?(topic) ? "downvoted" : "downvote"), :href => '#' }
     .grid_8
       .disp_text.topic_body
         = raw topic.body_html

@@ -9,4 +9,12 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   
   has_many :votes
+
+
+  def voted_for?(topic)
+    votes.where(:topic_id => topic.id, :value => true).count > 0
+  end 
+  def voted_against?(topic)
+    votes.where(:topic_id => topic.id, :value => false).count > 0
+  end 
 end
