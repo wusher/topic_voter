@@ -13,7 +13,7 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'simple_form'
 gem 'haml-rails'
-
+gem 'RedCloth'
 # Use unicorn as the web server
 # gem 'unicorn'
 
