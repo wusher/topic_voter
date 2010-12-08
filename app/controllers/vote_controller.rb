@@ -3,20 +3,20 @@ class VoteController < ApplicationController
 
   def up
     topic = Topic.find(params[:topic_id])
-    vote = current_user.votes.where(:topic_id = topic.id)
+    vote = current_user.votes.where(:topic_id => topic.id).first
     if vote.nil?
       vote = Vote.new
-      vote.topic = topic
+      vote.topic = topic 
       vote.user = current_user
     end
-
+    
     vote.value = true
     vote.save
   end 
 
-  def vote_down
+  def down 
     topic = Topic.find(params[:topic_id])
-    vote = current_user.votes.where(:topic_id = topic.id)
+    vote = current_user.votes.where(:topic_id => topic.id).first
     if vote.nil?
       vote = Vote.new
       vote.topic = topic
@@ -29,7 +29,7 @@ class VoteController < ApplicationController
 
   def delete
     topic = Topic.find(params[:topic_id])
-    vote = current_user.votes.where(:topic_id = topic.id)
+    vote = current_user.votes.where(:topic_id => topic.id)
     if not vote.nil?
       vote.destroy
     end

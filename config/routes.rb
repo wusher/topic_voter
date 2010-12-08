@@ -1,7 +1,9 @@
 TopicVoter::Application.routes.draw do
   resources :topics do
+    
+    post 'up',:controller => :vote
+    post 'down',:controller => :vote
     resources :votes do
-      get 'up'
 
     end 
     
