@@ -10,10 +10,12 @@
     .grid_8.prefix_1.suffix_1
       %h2.fg_text= topic.title
     .grid_1
-      %a{:class => 'voter center ' + (current_user.voted_for?(topic) ? "upvoted" : "upvote"), :href => '#' }
+      = link_to '', 'topics/' + topic.id.to_s + '/votes/up',
+                    :remote => true,
+                    :class => 'voter center ' + ((user_signed_in? and current_user.voted_for?(topic)) ? "upvoted" : "upvote")
       .score.center.fg_text
-        = topic.score 
-      %a{:class => 'voter center '+ (current_user.voted_against?(topic) ? "downvoted" : "downvote"), :href => '#' }
+        = topic.total_score 
+      %a{:class => 'voter center '+ ((user_signed_in? and current_user.voted_against?(topic)) ? "downvoted" : "downvote"), :href => '#' }
     .grid_8
       .disp_text.topic_body
         = raw topic.body_html

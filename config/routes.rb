@@ -1,5 +1,11 @@
 TopicVoter::Application.routes.draw do
-  resources :topics
+  resources :topics do
+    resources :votes do
+      get 'up'
+
+    end 
+    
+  end
 
   devise_for :users
 

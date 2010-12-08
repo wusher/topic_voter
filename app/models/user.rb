@@ -17,4 +17,5 @@ class User < ActiveRecord::Base
   def voted_against?(topic)
     votes.where(:topic_id => topic.id, :value => false).count > 0
   end 
+ 
 end
