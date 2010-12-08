@@ -21,3 +21,9 @@
         .alert= alert
       = yield
     .clear
+  :javascript
+    $(document).ready(function () {
+      $('.jbutton').button();
+      $('.jdate').datepicker();
+
+    });

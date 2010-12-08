@@ -41,6 +41,7 @@ class TopicsController < ApplicationController
   # POST /topics.xml
   def create
     @topic = Topic.new(params[:topic])
+    @topic.submited_by = current_user.email
 
     respond_to do |format|
       if @topic.save
