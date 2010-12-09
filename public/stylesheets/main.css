@@ -59,39 +59,53 @@ html, body{
 }
 .upvote {
    background-color:darkgreen;
+
   -moz-border-radius:15px;
   -moz-box-shadow:0px 3px 5px black inset;
+
+  -webkit-border-radius:15px;
+  -webkit-box-shadow:0px 3px 5px black inset;
+
 }
 a.upvote:hover {
   -moz-border-radius:15px;
   -moz-box-shadow:0px 0px 7px 2px darkgreen;
+
+  -webkit-border-radius:15px;
+  -webkit-box-shadow:0px 0px 7px 2px darkgreen;
 }
 .upvoted {
   background-color:darkgreen;
+
   -moz-border-radius:15px;
   -moz-box-shadow:0px 0px 7px 2px darkgreen ;
-}
-breaka.upvoted:hover{
-  -moz-border-radius:15px;
-  -moz-box-shadow:0px 3px 5px darkgreen inset;
+
+  -webkit-border-radius:15px;
+  -webkit-box-shadow:0px 0px 7px 2px darkgreen ;
 }
 .downvote {
    background-color:darkred;
+
   -moz-border-radius:15px;
   -moz-box-shadow:0px 3px 5px black inset;
+
+  -webkit-border-radius:15px;
+  -webkit-box-shadow:0px 3px 5px black inset;
 }
 a.downvote:hover {
   -moz-border-radius:15px;
   -moz-box-shadow:0px 0px 7px 2px darkred ;
+
+  -webkit-border-radius:15px;
+  -webkit-box-shadow:0px 0px 7px 2px darkred ;
 }
 .downvoted {
    background-color:darkred;
   -moz-border-radius:15px;
   -moz-box-shadow:0px 0px 5px 1px darkred;
-}
-breaka.downvoted:hover{
-  -moz-border-radius:15px;
-  -moz-box-shadow:0px 3px 5px darkred inset;
+
+  -webkit-border-radius:15px;
+  -webkit-box-shadow:0px 0px 5px 1px darkred;
 }
 
 .score {
