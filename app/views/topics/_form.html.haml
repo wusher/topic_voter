@@ -19,6 +19,12 @@
     #html_preview{ :class => 'topic_body disp_text'  } html preview    
     %br
   .grid_10.prefix_1.suffix_1
+    \ this uses textile and html for the input. <a href="http://redcloth.org/hobix.com/textile/quick.html">click here for the textile guide </a>
+    %br
+    \please do not abuse html.
+
+    %br
+  .grid_10.prefix_1.suffix_1
     .actions
       = f.submit 'Save', :class => 'jbutton'
   .clear
@@ -31,7 +37,7 @@
       $.post('/textilize', { 'text' : text } , function(data,status,xhr){
         output.html(data);
       });
-      setTimeout(pollFunciton, 5000);
+      setTimeout(pollFunciton, 0500);
     };
     pollFunciton();
   });
