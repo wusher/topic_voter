@@ -7,9 +7,9 @@
     = javascript_include_tag 'jquery-ui'
     = csrf_meta_tag
   %body
-    .header{ :style => 'border:thin black solid;'}
+    .header
       %h1
-        %a{ :href=> "/", :class => "plain_link" } vote for topics
+        %a{ :href=> "/", :class => "plain_link" } tracker presentations  
       .right
         - if user_signed_in?
           = link_to current_user.email, destroy_user_session_path
@@ -28,6 +28,28 @@
     $(document).ready(function () {
       $('.jbutton').button();
       $('.jdate').datepicker();
-      $('.upvote').bind('click', 
+      $('.downvote').bind('ajax:success',function (data, status, xhr) {
+        $(this).siblings('.score').text(status);
+        var link = $(this);
+        if (!link.hasClass('downvoted')){
+          link.addClass('downvoted');
+          var uplink = link.siblings('.upvote');
+          uplink.removeClass('upvoted');
+        } else {
+          link.removeClass('downvoted');
+        }
+      });
+      $('.upvote').bind('ajax:success', function(data, status,xhr){
+        $(this).siblings('.score').text(status);
+        var link = $(this);
+        if (!link.hasClass('upvoted')){
+          link.addClass('upvoted');
+          var downlink= link.siblings('.downvote');
+          downlink.removeClass('downvoted');
+        } else {
+          link.removeClass('upvoted');
+        }
+      });
+
+      
     });
-  

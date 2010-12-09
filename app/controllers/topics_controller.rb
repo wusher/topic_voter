@@ -5,7 +5,8 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.xml
   def index
-    @topics = Topic.all
+    @topics = Topic.order('created_at desc').all()
+    @topics.sort! { |x,y| y.computed_score <=> x.computed_score } 
 
     respond_to do |format|
       format.html # index.html.erb

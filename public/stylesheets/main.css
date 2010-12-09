@@ -71,7 +71,7 @@ a.upvote:hover {
   -moz-border-radius:15px;
   -moz-box-shadow:0px 0px 7px 2px darkgreen ;
 }
-a.upvoted:hover{
+breaka.upvoted:hover{
   -moz-border-radius:15px;
   -moz-box-shadow:0px 3px 5px darkgreen inset;
 }
@@ -89,7 +89,7 @@ a.downvote:hover {
   -moz-border-radius:15px;
   -moz-box-shadow:0px 0px 5px 1px darkred;
 }
-a.downvoted:hover{
+breaka.downvoted:hover{
   -moz-border-radius:15px;
   -moz-box-shadow:0px 3px 5px darkred inset;
 }

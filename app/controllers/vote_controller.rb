@@ -10,8 +10,20 @@ class VoteController < ApplicationController
       vote.user = current_user
     end
     
-    vote.value = true
-    vote.save
+    if vote.value != true then 
+      vote.value = true
+      vote.save
+    else 
+      vote.destroy
+    end
+
+    nt = Topic.find(params[:topic_id])
+    nt.score = nt.computed_score
+    nt.save
+
+    respond_to do |format|
+      format.js { render :json => nt.computed_score, :status => :ok }
+    end 
   end 
 
   def down 
@@ -22,17 +34,20 @@ class VoteController < ApplicationController
       vote.topic = topic
       vote.user = current_user
     end
-
-    vote.value = false 
-    vote.save
-  end 
-
-  def delete
-    topic = Topic.find(params[:topic_id])
-    vote = current_user.votes.where(:topic_id => topic.id)
-    if not vote.nil?
+    if vote.value != false then 
+      vote.value = false 
+      vote.save
+    else 
       vote.destroy
-    end
+    end if 
 
+    nt = Topic.find(params[:topic_id])
+    nt.score = nt.computed_score
+    nt.save
+
+    respond_to do |format|
+      format.js { render :json => nt.computed_score, :status => :ok }
+    end 
   end 
+
 end

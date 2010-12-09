@@ -13,13 +13,13 @@
       = link_to '', 'topics/' + topic.id.to_s + '/up',
                     :remote => true,
                     :method => :post, 
-                    :class => 'voter center ' + ((user_signed_in? and current_user.voted_for?(topic)) ? "upvoted" : "upvote")
+                    :class => 'voter center upvote ' + ((user_signed_in? and current_user.voted_for?(topic)) ? "upvoted" : "")
       .score.center.fg_text
-        = topic.total_score 
+        = topic.computed_score
       = link_to '', 'topics/' + topic.id.to_s + '/down',
                     :remote => true,
                     :method => :post, 
-                    :class => 'voter center '+ ((user_signed_in? and current_user.voted_against?(topic)) ? "downvoted" : "downvote")
+                    :class => 'voter center downvote '+ ((user_signed_in? and current_user.voted_against?(topic)) ? "downvoted" : "")
     .grid_8
       .disp_text.topic_body
         = raw topic.body_html

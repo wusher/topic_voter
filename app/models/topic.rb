@@ -11,10 +11,11 @@ class Topic < ActiveRecord::Base
     votes.where(:user_id => user.id).count > 0
   end 
 
-  def total_score
+  def computed_score
+    all_votes = Vote.where(:topic_id => id)
     total = 0
-    votes.each do |vote|
-      total += vote.value ? 3 : -1
+    all_votes.each do |vote|
+      total += vote.value == true  ? 3 : -1
     end 
     total = 0 unless total > 0
     total
