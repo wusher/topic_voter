@@ -13,7 +13,7 @@
   .grid_10.prefix_1.suffix_1
     = f.input :title, :input_html => { :class => 'fill ' }
   .grid_10.prefix_1.suffix_1
-    = f.input :body, :input_html => { :class => 'disp_text ', :rows => 5, :style => 'padding:10px;width:760px;'}
+    = f.input :body, :input_html => { :id => 'input_box', :class => 'disp_text ', :rows => 5, :style => 'padding:10px;width:760px;'}
     %br
   .grid_10.prefix_1.suffix_1
     #html_preview{ :class => 'topic_body disp_text'  } html preview    
@@ -22,3 +22,16 @@
     .actions
       = f.submit 'Save', :class => 'jbutton'
   .clear
+:javascript
+  $(function ($) {
+    var pollFunciton = function () {
+      var input = $('textarea#input_box');
+      var text = input.val();
+      var output = $('#html_preview');
+      $.post('/textilize', { 'text' : text } , function(data,status,xhr){
+        output.html(data);
+      });
+      setTimeout(pollFunciton, 5000);
+    };
+    pollFunciton();
+  });

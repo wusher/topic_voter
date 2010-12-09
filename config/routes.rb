@@ -9,6 +9,8 @@ TopicVoter::Application.routes.draw do
     
   end
 
+  post 'textilize', :controller => :red_cloth
+
   devise_for :users
 
   get "home/about"
