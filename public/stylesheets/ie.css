@@ -1,0 +1,14 @@
+
+a.downvote:hover {
+  border: 5px red solid;
+}
+a.upvote:hover {
+  border: 5px green solid;
+}
+
+.downvoted{
+  border: 5px red solid;
+}
+.upvoted {
+  border: 5px green solid;
+}

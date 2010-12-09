@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#ieWarning{
+margin:0px;
+padding:0px;
+text-align:center;
+width:100%;
+height:81px;
+background-color: darkorange;
+position:absolute;
+top:-81px;
+left:0px;
+}
+#ieWarningTxt{
+font-family: Helvetica, Arial, sans-serif;
+font-size:18px;
+color:#525253;
+margin:0px auto;
+line-height:33px;
+}
+#ieWarningTxt a,#ieWarningTxt a:visited{
+color:#525253;
+text-decoration:underline;
+}
+#closeWarning{
+    position:absolute;
+    top:4px;
+    right:10px; 
+    vertical-align:middle;
+    color:#525253;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size:17px;
+    padding: 0 4px;
+    border:solid 2px #525253;
+    font-weight: bold;
+    text-decoration:none;
+    }
+#closeWarning img{
+    border:none;
+    }
+.shadow{
+ display:block;
+ height:19px;
+ filter: dropshadow(color=#ffffff,offX=0,offY=1);
+}
+
