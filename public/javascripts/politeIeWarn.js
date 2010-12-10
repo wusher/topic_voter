@@ -8,7 +8,7 @@
         if (!msg) msg = 'Your browser is a little old. &nbsp; To see me in all my glory get a shiny new one!'; //default message
 
         //banner html
-        var banner = '<div id="ieWarning"><br/><br/><span id="ieWarningTxt" class="shadow">' + msg + '</span> <a href="#" id="closeWarning" class="shadow">X</a><br/><br/></div>';
+        var banner = '<div id="ieWarning"><div id="ieWarningTxt" class="shadow">' + msg + '</div><a href="#" id="closeWarning" class="shadow">X</a></div>';
 
         if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)) { //test for MSIE x.x;
             var ieversion = new Number(RegExp.$1); // capture x.x portion and store as a number
