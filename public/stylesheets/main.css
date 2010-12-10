@@ -46,10 +46,10 @@ html, body{
   background-color:#ccc; color:#222;
   
   -moz-border-radius:7px;
-  -moz-box-shadow:0px 3px 5px black inset;
+  -moz-box-shadow:0px 3px 5px #222 inset;
 
   -webkit-border-radius:7px;
-  -webkit-box-shadow:0px 3px 5px black inset;
+  -webkit-box-shadow:0px 3px 5px #222 inset;
 }
 
 .fg_text, .fg_text a, .fg_text a:visited{
@@ -64,10 +64,10 @@ html, body{
    background-color:darkgreen;
 
   -moz-border-radius:15px;
-  -moz-box-shadow:0px 3px 5px black inset;
+  -moz-box-shadow:0px 3px 5px #222 inset;
 
   -webkit-border-radius:15px;
-  -webkit-box-shadow:0px 3px 5px black inset;
+  -webkit-box-shadow:0px 3px 5px #222 inset;
 
 }
 a.upvote:hover {
@@ -90,10 +90,10 @@ a.upvote:hover {
    background-color:darkred;
 
   -moz-border-radius:15px;
-  -moz-box-shadow:0px 3px 5px black inset;
+  -moz-box-shadow:0px 3px 5px #222 inset;
 
   -webkit-border-radius:15px;
-  -webkit-box-shadow:0px 3px 5px black inset;
+  -webkit-box-shadow:0px 3px 5px #222 inset;
 }
 a.downvote:hover {
   -moz-border-radius:15px;
