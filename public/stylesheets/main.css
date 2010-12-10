@@ -51,6 +51,12 @@ html, body{
   -webkit-border-radius:7px;
   -webkit-box-shadow:0px 3px 5px #222 inset;
 }
+.disp_text a {
+  color:#000;
+}
+.disp_text a:hover {
+  color:#444;
+}
 
 .fg_text, .fg_text a, .fg_text a:visited{
   font-weight:bold; 
