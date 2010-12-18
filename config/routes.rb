@@ -1,4 +1,6 @@
 TopicVoter::Application.routes.draw do
+  devise_for :admins
+
   resources :topics do
     
     post 'up',:controller => :vote
