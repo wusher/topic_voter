@@ -9,7 +9,7 @@
   .grid_4.prefix_1.suffix_1
     = f.input :presentor, :input_html => { :class => 'fill ' }
   .grid_4.prefix_1.suffix_1
-    = f.input :target_on, :as => :string,   :input_html => {:class => 'jdate fill '}
+    = f.input :target_on, :label => 'Around when this should be presented',  :as => :string,   :input_html => {:class => 'jdate fill '}
   .grid_10.prefix_1.suffix_1
     = f.input :title, :input_html => { :class => 'fill ' }
   .grid_10.prefix_1.suffix_1
@@ -19,7 +19,7 @@
     #html_preview{ :class => 'topic_body disp_text'  } html preview    
     %br
   .grid_10.prefix_1.suffix_1
-    \ this uses textile and html for the input. <a href="http://redcloth.org/hobix.com/textile/quick.html">click here for the textile guide </a>
+    \ this uses textile and html for the input. <a target="blank" href="http://redcloth.org/hobix.com/textile/quick.html">click here for the textile guide </a>
     %br
     \please do not abuse html.
 
