@@ -1,4 +1,5 @@
 class PeopleController < ApplicationController
+  
   def index 
     @users = User.find(:all)
 

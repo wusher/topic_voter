@@ -28,9 +28,11 @@
    
     .container_12
       - if notice
-        .notice= notice
+        .grid_6.notice= notice
+        .clear
       - if alert
-        .alert= alert
+        .grid_6.alert= alert
+        .clear
       = yield
     .clear
   :javascript
