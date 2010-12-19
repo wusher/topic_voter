@@ -1,5 +1,4 @@
 TopicVoter::Application.routes.draw do
-  devise_for :admins
 
   resources :topics do
     
@@ -13,11 +12,15 @@ TopicVoter::Application.routes.draw do
 
   post 'textilize', :controller => :red_cloth
 
+
+  devise_for :admins
   devise_for :users
 
-  get "home/about"
-  get "home/secure"
 
+  get "people", :controller => :people, :action => :index 
+  get "people/index"
+  get "people/show"
+  delete "people/destroy"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

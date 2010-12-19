@@ -1,4 +1,14 @@
 
-- @users.each do |user|
-  .grid_12= user.email 
-    
+%table 
+  %tr
+    %th user
+    %th delete user 
+    %th logins
+    %th votes 
+  - @users.each do |user|
+    %tr
+      %td= user.email
+      %td= link_to "destroy",{ :action => :destroy, :id => user.id },   :method => :delete 
+      %td= user.sign_in_count
+      %td= user.votes.count
+

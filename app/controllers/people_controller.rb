@@ -1,5 +1,6 @@
 class PeopleController < ApplicationController
-  
+  before_filter :authenticate_admin!
+
   def index 
     @users = User.find(:all)
 
@@ -24,11 +25,11 @@ class PeopleController < ApplicationController
   # DELETE /topics/1
   # DELETE /topics/1.xml
   def destroy
-    @topic = Topic.find(params[:id])
-    @topic.destroy
+    @user = User.find(params[:id])
+    @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to(topics_url) }
+      format.html { redirect_to(people_url) }
       format.xml  { head :ok }
     end
   end
