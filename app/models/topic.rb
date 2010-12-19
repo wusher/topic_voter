@@ -5,6 +5,17 @@ class Topic < ActiveRecord::Base
                     :length => { :minimum => 5 } 
   has_many :votes
 
+  def self.pending
+    where( :presented_on => nil ).order('created_at desc')
+  end 
+
+  def self.scheduled
+    where( 'presented_on >= ?', Time.now).order('presented_on desc' )  
+  end 
+
+  def self.completed 
+    where( 'presented_on < ?', Time.now).order('presented_on desc' )  
+  end 
 
   def voted_by?(user)
     votes.where(:user_id => user.id).count > 0

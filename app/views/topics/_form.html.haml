@@ -6,6 +6,10 @@
         %ul
           - @topic.errors.full_messages.each do |msg|
             %li= msg
+  -if admin_signed_in? 
+    .grid_4.prefix_7.suffix_1
+      = f.input :presented_on, :label => "This topic will be presented on ( adding a date below will make this presentation non-voteable) ", :as => :string, :input_html => { :class => 'jdate fill '}, :label_html => { :class => 'admin' } 
+      %br
   .grid_4.prefix_1.suffix_1
     = f.input :presentor, :input_html => { :class => 'fill ' }
   .grid_4.prefix_1.suffix_1

@@ -6,8 +6,17 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.xml
   def index
-    @topics = Topic.order('created_at desc').all()
-    @topics.sort! { |x,y| y.computed_score <=> x.computed_score } 
+    if params[:tab] == 'old' then 
+      @topics = Topic.completed.all()
+    elsif params[:tab] == 'scheduled' then 
+      @topics = Topic.scheduled
+    elsif params[:tab] == 'all' then 
+      @topics = Topic.order('created_at').all
+    else 
+      @topics = Topic.pending.all()
+      @topics.sort! { |x,y| y.computed_score <=> x.computed_score } 
+    end 
+
 
     respond_to do |format|
       format.html # index.html.erb

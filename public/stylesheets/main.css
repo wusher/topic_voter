@@ -41,6 +41,9 @@ html, body{
   min-height:60px;
 }
 
+.scheduled {
+  color:green;
+}
 
 .disp_text {
   background-color:#ccc; color:#222;
@@ -125,6 +128,60 @@ a.downvote:hover {
 
 
 .admin, a.admin, a.admin:visited {
-  color:darkred;
-  background:yellow;
+  color:red;
 }
+
+
+
+
+
+
+
+.tabs{
+  padding: 05px 0;
+  margin-left: 0;
+  border-bottom: 1px solid #ccc;
+  list-style-type: none;
+  text-align: left; /*set to left, center, or right to align the menu as desired*/
+}
+
+.tabs li{
+  display: inline;
+  margin: 0;
+}
+
+.tabs li a{
+  text-decoration: none;  padding: 05px 27px;  margin-right: 3px;
+  border: 1px solid #ccc;  border-bottom: none;  font-weight:bold;
+  color: #ccc;
+ 
+  -moz-border-radius:7px 7px 0px 0px ;
+  break-moz-box-shadow:0px 3px 5px #555 inset;
+
+  -webkit-border-radius:7px 7px 0px 0px ;
+  break-webkit-box-shadow:0px 3px 5px #ccc inset;
+
+}
+
+.tabs li a:visited{
+}
+
+.tabs li a:hover{
+  -moz-box-shadow:0px 3px 5px #ccc inset;
+  -webkit-box-shadow:0px 3px 5px #ccc inset;
+}
+
+.tabs li a:active{
+  color: #222;
+}
+
+.tabs li.current a{ /*selected tab effect*/
+  background-color: #ccc;
+  color: #222;
+  -moz-box-shadow:0px 3px 5px #222 inset;
+  -webkit-box-shadow:0px 3px 5px #222 inset;
+}
+
+
+
+
