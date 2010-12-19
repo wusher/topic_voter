@@ -20,6 +20,8 @@
       %h1
         %a{ :href=> "/", :class => "plain_link" } tracker presentations  
       .right
+        - if admin_signed_in? 
+          = link_to current_admin.email, destroy_admin_session_path, :class => 'admin' 
         - if user_signed_in?
           = link_to current_user.email, destroy_user_session_path
         - else

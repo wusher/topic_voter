@@ -122,3 +122,9 @@ a.downvote:hover {
   margin: 0px 10px; display:block;width:30px;height:30px;
   padding-top:7px; 
 }
+
+
+.admin, a.admin, a.admin:visited {
+  color:darkred;
+  background:yellow;
+}
