@@ -30,11 +30,11 @@
               \ around #{ topic.target_on }
             - else 
               \ anytime
-          \ presented by #{ (topic.presentor.length > 0 && topic.presentor) || '???' }
+          \ presented by #{ (topic.presentor && topic.presentor.length > 0) || '???' }
     - if user_signed_in?
       .grid_1
         = link_to 'Edit', edit_topic_path(topic), :class => 'fg_text'
-        - if current_user.email == topic.submited_by
+        - if current_user.email == topic.submited_by or admin_signed_in?
           = link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete, :class => 'fg_text'
     .clear
     .grid_10{ :style => 'margin:10px;'}

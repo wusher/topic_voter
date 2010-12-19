@@ -8,7 +8,7 @@
   - @users.each do |user|
     %tr
       %td= user.email
-      %td= link_to "destroy",{ :action => :destroy, :id => user.id },   :method => :delete 
+      %td= link_to "destroy",{ :action => :destroy, :id => user.id },   :method => :delete , :confirm => "are you sure you want to delete this person? it can never be undone"
       %td= user.sign_in_count
       %td= user.votes.count
 
