@@ -1,0 +1,11 @@
+
+
+%h2 changing password 
+
+%h3= 'User: ' + @user.email
+.grid_6
+  = simple_form_for @user, :url =>  person_path(@user) do |f| 
+    = f.input :password , :as => :string, :input_html =>  { :class => 'fill' } 
+    = f.button :submit 
+
+  = link_to 'Back', people_path  

@@ -17,10 +17,10 @@ TopicVoter::Application.routes.draw do
   devise_for :users
 
 
-  get "people", :controller => :people, :action => :index 
-  get "people/index"
-  get "people/show"
-  delete "people/destroy"
+  resources :people do 
+    post 'clear_votes' 
+  end 
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

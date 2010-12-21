@@ -1,8 +1,10 @@
 
 
-.grid_12{ :style => 'margin:20px' }
+.grid_12
   - if user_signed_in?
     = link_to 'New Topic', new_topic_path , :class => 'jbutton'
+  - if admin_signed_in? 
+    = link_to 'Manage Users', people_path, :class => 'jbutton admin' 
 
 .clear
 .grid_11

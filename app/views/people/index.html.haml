@@ -2,13 +2,17 @@
 %table 
   %tr
     %th user
-    %th delete user 
     %th logins
+    %th reset password 
     %th votes 
+    %th clear votes 
+    %th delete user 
   - @users.each do |user|
     %tr
       %td= user.email
-      %td= link_to "destroy",{ :action => :destroy, :id => user.id },   :method => :delete , :confirm => "are you sure you want to delete this person? it can never be undone"
       %td= user.sign_in_count
+      %td= link_to "reset password", edit_person_path(user)
       %td= user.votes.count
+      %td= link_to "clear votes", person_clear_votes_path(user) , :method => :post , :confirm => 'are you sure you want to delete all these votes for this user? it cannot be undone. '
+      %td= link_to "destroy", person_path(user) ,   :method => :delete , :confirm => "are you sure you want to delete this person? it cannot be undone."
 
