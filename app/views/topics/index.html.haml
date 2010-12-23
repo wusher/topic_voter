@@ -45,7 +45,7 @@
               \ on #{ topic.presented_on } 
             - else 
               \ anytime
-          \ presented by #{ (topic.presentor && topic.presentor.length > 0) || '???' }
+          \ presented by #{ (topic.presentor && topic.presentor.length > 0) ? topic.presentor : '???' }
     - if user_signed_in?
       .grid_1
         - if !topic.presented_on or admin_signed_in? 
